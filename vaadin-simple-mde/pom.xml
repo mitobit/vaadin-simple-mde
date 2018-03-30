@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.vaadin.addons</groupId>
     <artifactId>vaadin-simple-mde</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.5-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>SimpleMDE</name>
     <description>Vaadin wrapper for the JavaScript Markdown Editor (https://github.com/sparksuite/simplemde-markdown-editor)</description>
-    <url>https://github.com/melistik/vaadin-simple-mde</url>
+    <url>https://github.com/mitobit/vaadin-simple-mde.git</url>
 
     <developers>
         <developer>
@@ -18,10 +19,15 @@
             <organization>rocketbase.io software productions GmbH</organization>
             <url>http://www.rocketbase.io</url>
         </developer>
+        <developer>
+            <name>Luca De Felici</name>
+            <organization>Mitobit</organization>
+            <url>http://www.mitobit.com</url>
+        </developer>
     </developers>
 
     <properties>
-        <vaadin.version>7.6.6</vaadin.version>
+        <vaadin.version>7.7.12</vaadin.version>
         <project.source.version>1.8</project.source.version>
         <project.target.version>1.8</project.target.version>
         <project.encoding>UTF-8</project.encoding>
@@ -30,7 +36,7 @@
         <!-- MANIFEST settings -->
         <Implementation-Version>${project.version}</Implementation-Version>
         <Implementation-Title>SimpleMDE</Implementation-Title>
-        <Implementation-Vendor>Marten Prieß</Implementation-Vendor>
+        <Implementation-Vendor>Mitobit</Implementation-Vendor>
         <Vaadin-License-Title>The MIT License (MIT)</Vaadin-License-Title>
         <Vaadin-Addon>${project.artifactId}-${project.version}.jar</Vaadin-Addon>
     </properties>
@@ -79,7 +85,6 @@
                     <target>${project.target.version}</target>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
@@ -102,12 +107,12 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.0.2</version>
                 <configuration>
+                    <classifier>mitobit</classifier>
                     <archive>
                         <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
                         <index>true</index>
@@ -122,7 +127,6 @@
                     </archive>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -136,7 +140,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -156,8 +159,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
