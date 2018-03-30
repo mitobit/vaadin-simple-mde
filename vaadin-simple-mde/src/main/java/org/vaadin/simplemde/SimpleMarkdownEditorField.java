@@ -2,6 +2,7 @@ package org.vaadin.simplemde;
 
 import com.vaadin.data.Buffered;
 import com.vaadin.data.Validator;
+import com.vaadin.shared.util.SharedUtil;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.themes.ValoTheme;
 
@@ -60,8 +61,11 @@ public class SimpleMarkdownEditorField extends FluidCustomField<String> {
         this.markdownEditor.setLineWrapping(false);
         this.markdownEditor.addStyleName(ValoTheme.TEXTAREA_BORDERLESS);
         this.markdownEditor.addValueChangeListener(e -> {
-            SimpleMarkdownEditorField.super.setInternalValue(e.getValue());
-            SimpleMarkdownEditorField.this.fireValueChange(true);
+            String newValue = e.getValue();
+            if (!SharedUtil.equals(newValue, getInternalValue())) {
+                SimpleMarkdownEditorField.super.setInternalValue(newValue);
+                SimpleMarkdownEditorField.this.fireValueChange(true);
+            }
         });
     }
 
