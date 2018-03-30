@@ -25,12 +25,14 @@ public class DemoUI extends UI {
         editor.setHideIcons(Arrays.asList(SimpleMarkdownToolbarIcon.GUIDE, SimpleMarkdownToolbarIcon.FULLSCREEN, SimpleMarkdownToolbarIcon.SIDE_BY_SIDE));
         editor.setValue("# Hello World \nwe can write markdown!");
         editor.setShowStatus(false);
+        editor.setReadOnly(true);
         editor.addValueChangeListener(e -> Notification.show(e.getValue(), Notification.Type.TRAY_NOTIFICATION));
         setContent(new MVerticalLayout()
                 .add(editor, 1)
                 .add(new MHorizontalLayout()
                         .add(new MButton("clear", e -> editor.setValue("")))
-                        .add(new MButton("getValue", e -> Notification.show(editor.getValue()))))
+                        .add(new MButton("getValue", e -> Notification.show(editor.getValue())))
+                        .add(new MButton("Readonly", e -> editor.setReadOnly(!editor.isReadOnly()))))
                 .withSize(MSize.FULL_SIZE));
     }
 }

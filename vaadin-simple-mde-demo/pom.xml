@@ -3,7 +3,7 @@
     <parent>
         <artifactId>vaadin-simple-mde-root</artifactId>
         <groupId>org.vaadin.addons</groupId>
-        <version>1.0.4-SNAPSHOT</version>
+        <version>1.0.5-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -16,8 +16,12 @@
             <organization>rocketbase.io software productions</organization>
             <url>http://www.rocketbase.io</url>
         </developer>
+        <developer>
+            <name>Luca De Felici</name>
+            <organization>Mitobit</organization>
+            <url>http://www.mitobit.com</url>
+        </developer>
     </developers>
-
 
     <properties>
         <start-class>org.vaadin.simplemde.demo.Application</start-class>
@@ -58,6 +62,7 @@
             <groupId>org.vaadin.addons</groupId>
             <artifactId>vaadin-simple-mde</artifactId>
             <version>${version}</version>
+            <classifier>mitobit</classifier>
         </dependency>
 
         <dependency>
@@ -115,6 +120,7 @@
                                     <groupId>org.vaadin.addons</groupId>
                                     <artifactId>vaadin-simple-mde</artifactId>
                                     <version>${version}</version>
+                                    <classifier>mitobit</classifier>
                                     <type>jar</type>
                                     <includes>**/sliderpanel/components/*.scss</includes>
                                     <outputDirectory>${basedir}/src/main/resources</outputDirectory>

@@ -5,7 +5,7 @@
     <groupId>org.vaadin.addons</groupId>
     <artifactId>vaadin-simple-mde-root</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.5-SNAPSHOT</version>
 
     <modules>
         <module>vaadin-simple-mde</module>
@@ -18,6 +18,11 @@
             <email>info@rocketbase.io</email>
             <organization>rocketbase.io software productions GmbH</organization>
             <url>http://www.rocketbase.io</url>
+        </developer>
+        <developer>
+            <name>Luca De Felici</name>
+            <organization>Mitobit</organization>
+            <url>http://www.mitobit.com</url>
         </developer>
     </developers>
 
@@ -38,7 +43,7 @@
         <!-- MANIFEST settings -->
         <Implementation-Version>${project.version}</Implementation-Version>
         <Implementation-Title>SimpleMDE</Implementation-Title>
-        <Implementation-Vendor>Marten Prieß</Implementation-Vendor>
+        <Implementation-Vendor>Mitobit</Implementation-Vendor>
         <Vaadin-License-Title>The MIT License (MIT)</Vaadin-License-Title>
         <Vaadin-Addon>${project.artifactId}-${project.version}.jar</Vaadin-Addon>
     </properties>
@@ -57,9 +62,9 @@
     </dependencies>
 
     <scm>
-        <connection>scm:git:git@github.com:melistik/vaadin-simple-mde.git</connection>
-        <developerConnection>scm:git:git@github.com:melistik/vaadin-simple-mde.git</developerConnection>
-        <url>https://github.com/melistik/vaadin-simple-mde.git</url>
+        <connection>scm:git:git@github.com:mitobit/vaadin-simple-mde.git</connection>
+        <developerConnection>scm:git:git@github.com:mitobit/vaadin-simple-mde.git</developerConnection>
+        <url>https://github.com/mitobit/vaadin-simple-mde.git</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -92,7 +97,6 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
-
 
     <build>
         <plugins>
