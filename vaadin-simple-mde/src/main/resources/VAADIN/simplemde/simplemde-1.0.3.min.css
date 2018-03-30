@@ -6,6 +6,23 @@
     overflow: hidden;
 }
 
+.simplemde-editor.borderless .editor-toolbar {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-left: none;
+    border-right: none;
+}
+
+.simplemde-editor.borderless .CodeMirror {
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.simplemde-editor.v-readonly .CodeMirror {
+    top: 0;
+}
+
 /**
  * simplemde v1.11.2
  * Copyright Next Step Webs, Inc.
@@ -234,10 +251,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 }
 
 .CodeMirror-scroll {
-    overflow: scroll !important;
-    margin-bottom: -30px;
-    margin-right: -30px;
-    padding-bottom: 30px;
+    overflow: hidden !important;
     height: 100%;
     outline: 0;
     position: relative
@@ -456,10 +470,6 @@ span.CodeMirror-selectedtext {
     bottom: 0;
 }
 
-.CodeMirror-scroll {
-    min-height: 300px
-}
-
 .CodeMirror-fullscreen {
     background: #fff;
     position: fixed !important;
@@ -468,7 +478,7 @@ span.CodeMirror-selectedtext {
     right: 0;
     bottom: 0;
     height: auto;
-    z-index: 9
+    z-index: 999;
 }
 
 .CodeMirror-sided {
@@ -524,7 +534,7 @@ span.CodeMirror-selectedtext {
     top: 0;
     left: 0;
     opacity: 1;
-    z-index: 9
+    z-index: 999;
 }
 
 .editor-toolbar.fullscreen::before {
