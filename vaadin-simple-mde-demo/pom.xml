@@ -35,7 +35,7 @@
             <dependency>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-bom</artifactId>
-                <version>1.0.5-RELEASE</version>
+                <version>${vaadin.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -61,7 +61,7 @@
         <dependency>
             <groupId>org.vaadin.addons</groupId>
             <artifactId>vaadin-simple-mde</artifactId>
-            <version>${version}</version>
+            <version>1.0.5-RELEASE</version>
             <classifier>mitobit</classifier>
         </dependency>
 
